@@ -15,6 +15,12 @@ inquirer
         type:'password',
         name:'contraseña',
         message:'contraseña'
-      },
+      }
     ])
+    .then(answers =>{
+      
+       const crearpqr = require('./opciones')
+       crearpqr.menu()
+    })
+
   exports.inquirer =inquirer;

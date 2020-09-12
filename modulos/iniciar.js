@@ -10,6 +10,9 @@ inquirer
         type:'password',
         name:'contraseña',
         message:'contraseña'
-      },
-    ])
-  exports.inquirer =inquirer;
+      }
+    ]).then(answers =>{
+      
+    
+   })
+  exports.inquirer =inquirer; 

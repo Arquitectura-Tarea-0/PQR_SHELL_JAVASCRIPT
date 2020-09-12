@@ -3,6 +3,7 @@
 npm necesarios:
 
 npm install --save inquirer-recursive
+
 npm install inquirer
 
 

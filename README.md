@@ -6,4 +6,6 @@ npm install --save inquirer-recursive
 
 npm install inquirer
 
+npm install inquirer-datepicker
+
 

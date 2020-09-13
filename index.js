@@ -1,16 +1,10 @@
 const inquirer= require('inquirer');
+const variables_session = require('./modulos/variables_interfaz');
+const funciones = require('./modulos/interfaces');
 
 inquirer
-  .prompt({
-   type:'list',
-   name:'opcion',
-   message:'¿que desea hacer?',
-   choices:['iniciar sesison','registrar']
-  })
+  .prompt(variables_session.Opciones_Session())
   .then(answers =>{
-    if(answers.opcion==='iniciar sesison'){
-     const iniciar = require('./modulos/iniciar')
-     iniciar.inquirer}
-     const registro = require('./modulos/formulario')
-     registro.inquirer
+        if(answers.opcion==='Iniciar sesison') funciones.Iniciar_Session();
+        else funciones.Formulario();
   })

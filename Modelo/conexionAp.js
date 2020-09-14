@@ -1,5 +1,5 @@
 var request = require('request');
-var authToken;
+var authToken ='eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.JC6qKuH9SG0SIiYSfhZUFTtirxN9Q47buLk0DPFFFzE';
 
 exports.CrearPQR = function(asunto,descripcion){
     request.post({uri: url,headers:{Authorization:authToken},form: { subject:asunto, description:descripcion}},
@@ -28,4 +28,44 @@ exports.Registro = function(nombre,contraseña,correo){
                  authToken = json.token;
                  return json.user;
         });
+      }
+
+exports.Nota_ID = function(id){   
+      //adaptar a la url  https://pqr-api-rails.herokuapp.com/notes/user_notes?
+      request.get({uri: url,headers:{Authorization:authToken}},
+      function(err, httpResponse, body) {
+            if (err) return ;
+                  var json = JSON.parse(body);
+                  return json.notes;
+            });
+      }
+
+exports.Notas_Todos = function(){   
+      //adaptar a la url  https://pqr-api-rails.herokuapp.com/notes/user_notes?
+      request.get({uri: url,headers:{Authorization:authToken}},
+      function(err, httpResponse, body) {
+            if (err) return ;
+                  var json = JSON.parse(body);
+                  return json.notes;
+            });
+      }
+
+exports.Filtrar_PQR = function(request_stat, request_typ, subjec, descriptio,created_a){   
+      // general pqr
+      request.get({uri: url,headers:{Authorization:authToken},form:{request_state:request_stat, request_type:request_typ, subject:subjec, description:descriptio,created_at:created_a}},
+      function(err, httpResponse, body) {
+            if (err) return ;
+                  var json = JSON.parse(body);
+                  return json.notes;
+            });
+      }
+
+exports.Filtrar_UsuarioPQR = function(request_stat, request_typ, subjec, descriptio,created_a){   
+      //user pqr
+      request.get({uri: url,headers:{Authorization:authToken},form:{request_state:request_stat, request_type:request_typ, subject:subjec, description:descriptio,created_at:created_a}},
+      function(err, httpResponse, body) {
+            if (err) return ;
+                  var json = JSON.parse(body);
+                  return json.notes;
+            });
       }

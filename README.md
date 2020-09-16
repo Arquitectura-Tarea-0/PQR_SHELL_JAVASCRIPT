@@ -8,9 +8,9 @@ Antes de ejecutar, es necesario realizar la instalacion de los modulos de nodejs
 
 Instalar las herramientas necesarias:
 
-npm init -y
-npm install inquirer : npm para la creacion del shell interactivo
-npm install inquirer-datepicker: npm para el formato fecha en el shell
+- npm init -y
+- npm install inquirer : npm para la creacion del shell interactivo
+- npm install inquirer-datepicker: npm para el formato fecha en el shell
 
 ## Para ejecutar la aplicación:
 

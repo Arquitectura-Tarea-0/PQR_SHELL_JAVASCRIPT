@@ -2,7 +2,7 @@
 
 ## Configuraciones importantes :
 
-Antes de ejecutar, es necesariorealizar la instalacion de los modulos de nodejs y algunas dependencias mas para el correcto funcionamiento de la aplicacion para el entorno de desarrollo
+Antes de ejecutar, es necesario realizar la instalacion de los modulos de nodejs y algunas dependencias mas para el correcto funcionamiento de la aplicacion para el entorno de desarrollo
 
 ## Instrucciones de instalación
 

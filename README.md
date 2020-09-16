@@ -16,6 +16,6 @@ Instalar las herramientas necesarias:
 
 como entorno de desarrollo se debe ejecutar el index.js de la siguiente forma:
 
-npm start shell
+npm start 
 
 

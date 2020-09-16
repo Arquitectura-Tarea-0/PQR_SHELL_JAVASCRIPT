@@ -1,16 +1,19 @@
 const inquirer= require('inquirer');
 inquirer.registerPrompt('datepicker', require('inquirer-datepicker'));
-const tipoS = ['tipo1','tipo2']
-const estado = ['tipo1','tipo2']
-const opciones = ['Continuar','Salir']
-const opcion = ['Crear solicitud','Listar solicitud','Salir']
+const tipoSFiltro = ['Peticion', 'Queja','Reclamo','Vacio']
+const estadoFiltro = ['Radicado','Proceso','Resuelto','Cerrado','Vacio']
+const tipoS = ['Peticion', 'Queja','Reclamo','Vacio']
+const opcionesUs = ['Crear PQR','Listar PQRS','Salir']
+const opciones = ['Agregar Nota','Marcar como resuelto','Salir']
+const opcionesAd = ['Agregar Nota','Marcar como resuelto','Radicar','Proceso','Salir']
+const opciones1 = ['Iniciar Session','Continuar en el formulario','Salir']
 
    exports.Menu_Operaciones = function() {
         return [{
             type:'list',
             message: '¿Que operacion desea realizar?',
             name: 'opcion', 
-            choices: opcion  
+            choices: opcionesUs  
         }];
     }   
 
@@ -19,16 +22,40 @@ const opcion = ['Crear solicitud','Listar solicitud','Salir']
             type:'list',
             name:'opcion',
             message:'¿que desea hacer?',
-            choices:['Iniciar sesison','Registrar']
+            choices:['Iniciar sesison','Registrar','Salir']
         }];
    }
 
    exports.Opciones_Solicitud = function() {
         return [{
-            ttype:'list',
+            type:'list',
             name:'opcion',
             message:' ¿Desea continuar o salir?',
             choices: opciones
+        }];
+    }
+
+    exports.Opciones_IF = function() {
+        return [{
+            type:'list',
+            name:'opcion',
+            message:' ¿Error, que desea hacer?',
+            choices: opciones1
+        }];
+    }
+
+    exports.Filtro_PQRS = function() {
+        return [{
+            type:'list',
+            name:'tipo',
+            message:'Filtro por Tipo de PQR',
+            choices: tipoSFiltro
+        },
+        {
+            type:'list',
+            name:'estado',
+            message:'Filtro por estado de PQR',
+            choices: estadoFiltro
         }];
     }
 
@@ -64,27 +91,27 @@ const opcion = ['Crear solicitud','Listar solicitud','Salir']
             type:'list',
             name:'tipo',
             message:'Tipo de solicitud',
-            choices: tipoS,
-            default: tipoS[0]
+            choices: tipoSFiltro,
+            default: ''
         },
         {
             type:'list',
             name:'estado',
             message:'Estado de solicitud',
-            choices: estado,
-            default: estado[0]
+            choices: estadoFiltro,
+            default: ''
+        },
+        {
+            type:'input',
+            name:'asunto',
+            message:'Ingrese el asunto',            
+            default:''
         },
         {
             type:'datepicker',
             name:'creacion',
-            message:'Ingrese fecha de creaccion',            
-            default:new Date('2017-09-28 17:36:05')
-        },
-        {
-            type:'datepicker',
-            name:'fin',
-            message:'Ingrese fecha de respuesta',
-            default: new Date('2017-09-28 17:36:05')
+            message:'Ingrese fecha de creaccion',
+            default: new Date('3000-09-13T01:50:32.201Z')
         }];
     }
 
@@ -92,8 +119,17 @@ const opcion = ['Crear solicitud','Listar solicitud','Salir']
         return [{
             type:'list',
             name:'opcion',
-            message:' ¿Desea agregar una notificacion?',
+            message:' ¿Que proceso quiere hacer con la pqr?',
             choices: opciones
+        }];
+    }
+
+    exports.Opciones_NotacionAd = function() {
+        return [{
+            type:'list',
+            name:'opcion',
+            message:' ¿Que proceso quiere hacer con la pqr?',
+            choices: opcionesAd
         }];
     }
 
@@ -109,7 +145,7 @@ const opcion = ['Crear solicitud','Listar solicitud','Salir']
         },
         {
             type:'password',
-            name:'Contraseña',
+            name:'contraseña',
             message:'contraseña',
             validate: function (value) {
                 if ((/.+/).test(value)) { return true; }

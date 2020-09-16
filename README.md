@@ -1,14 +1,22 @@
 # PQR_SHELL_JAVASCRIPT
-npm necesario para la creacccion de la consola:
 
-npm install inquirer
+##Configuraciones importantes :
 
-Permite generar ciclos dentro la consola shell:
+Antes de ejecutar, es necesariorealizar la instalacion de los modulos de nodejs y algunas dependencias mas para el correcto funcionamiento de la aplicacion para el entorno de desarrollo
 
-npm install --save inquirer-recursive
+##Instrucciones de instalación
 
-Permite implementar opciones fecha dentro la consola
+Instalar las herramientas necesarias:
 
-npm install inquirer-datepicker
+npm init -y
+npm install inquirer : npm para la creacion del shell interactivo
+npm install inquirer-datepicker: npm para el formato fecha en el shell
+
+##Para ejecutar la aplicación:
+
+como entorno de desarrollo se debe ejecutar el index.js de la siguiente forma:
+
+node index.js
+
 
 

@@ -29,7 +29,7 @@ se debe ejecutar en power shell - modo administrador
 
 ## Instrucciones de instalación
 
- - npm install -g pkg
+ - npm install -g pkg : npm para la creacción de los ejecutables.
  
 ## Instruciones de ejecucción
  - pkg index.js

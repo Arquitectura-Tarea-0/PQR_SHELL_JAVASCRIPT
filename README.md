@@ -14,7 +14,7 @@ Instalar las herramientas necesarias:
 
 ## Para ejecutar la aplicación:
 
-como entorno de desarrollo se debe ejecutar el index.js de la siguiente forma:
+como entorno de desarrollo se debe ejecutar el index.js,pero se creo un script para correrlo de la siguiente forma:
 
 npm start 
 

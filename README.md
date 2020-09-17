@@ -33,4 +33,8 @@ se debe ejecutar en power shell - modo administrador
  
 ## Instruciones de ejecucción
  - pkg index.js
- Al finalizar se obtiene en la misma carpeta raiz 3 ejecutables, que son: win,linux y mac.
+ 
+ Al finalizar se obtiene en la misma carpeta raiz 3 ejecutables, que son: 
+ - win
+ - linux 
+ - mac.
